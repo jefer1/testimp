@@ -79,6 +79,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\rondAlgo\rondAlgo.csproj">
+      <Project>{8f58adff-9c97-4495-83f7-60429ffbb0b0}</Project>
+      <Name>rondAlgo</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

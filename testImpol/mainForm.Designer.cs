@@ -43,6 +43,12 @@
             this.btnCalculate = new System.Windows.Forms.Button();
             this.groupBoxPar = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblResult = new System.Windows.Forms.Label();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.lbCoordinates = new System.Windows.Forms.ListBox();
+            this.lblXY = new System.Windows.Forms.Label();
+            this.txtResult = new System.Windows.Forms.TextBox();
+            this.listView1 = new System.Windows.Forms.ListView();
             ((System.ComponentModel.ISupportInitialize)(this.numMiddleDistance)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numLeftDistance)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numTopDistance)).BeginInit();
@@ -50,6 +56,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numWidth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numLength)).BeginInit();
             this.groupBoxPar.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -73,7 +80,7 @@
             0});
             this.numMiddleDistance.Name = "numMiddleDistance";
             this.numMiddleDistance.Size = new System.Drawing.Size(120, 26);
-            this.numMiddleDistance.TabIndex = 27;
+            this.numMiddleDistance.TabIndex = 6;
             // 
             // numLeftDistance
             // 
@@ -86,7 +93,7 @@
             0});
             this.numLeftDistance.Name = "numLeftDistance";
             this.numLeftDistance.Size = new System.Drawing.Size(120, 26);
-            this.numLeftDistance.TabIndex = 25;
+            this.numLeftDistance.TabIndex = 5;
             // 
             // numTopDistance
             // 
@@ -99,12 +106,12 @@
             0});
             this.numTopDistance.Name = "numTopDistance";
             this.numTopDistance.Size = new System.Drawing.Size(120, 26);
-            this.numTopDistance.TabIndex = 26;
+            this.numTopDistance.TabIndex = 4;
             // 
             // numRadius
             // 
             this.numRadius.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.numRadius.Location = new System.Drawing.Point(140, 100);
+            this.numRadius.Location = new System.Drawing.Point(167, 100);
             this.numRadius.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -112,12 +119,12 @@
             0});
             this.numRadius.Name = "numRadius";
             this.numRadius.Size = new System.Drawing.Size(120, 26);
-            this.numRadius.TabIndex = 24;
+            this.numRadius.TabIndex = 3;
             // 
             // numWidth
             // 
             this.numWidth.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.numWidth.Location = new System.Drawing.Point(140, 69);
+            this.numWidth.Location = new System.Drawing.Point(167, 69);
             this.numWidth.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -125,12 +132,12 @@
             0});
             this.numWidth.Name = "numWidth";
             this.numWidth.Size = new System.Drawing.Size(120, 26);
-            this.numWidth.TabIndex = 23;
+            this.numWidth.TabIndex = 2;
             // 
             // numLength
             // 
             this.numLength.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.numLength.Location = new System.Drawing.Point(140, 36);
+            this.numLength.Location = new System.Drawing.Point(167, 36);
             this.numLength.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -138,7 +145,7 @@
             0});
             this.numLength.Name = "numLength";
             this.numLength.Size = new System.Drawing.Size(120, 26);
-            this.numLength.TabIndex = 22;
+            this.numLength.TabIndex = 1;
             // 
             // lblLeftDistance
             // 
@@ -166,9 +173,9 @@
             this.lblRadius.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblRadius.Location = new System.Drawing.Point(24, 102);
             this.lblRadius.Name = "lblRadius";
-            this.lblRadius.Size = new System.Drawing.Size(58, 20);
+            this.lblRadius.Size = new System.Drawing.Size(126, 20);
             this.lblRadius.TabIndex = 19;
-            this.lblRadius.Text = "Polmer";
+            this.lblRadius.Text = "Polmer rondelice";
             // 
             // lblWidth
             // 
@@ -196,9 +203,10 @@
             this.btnCalculate.Location = new System.Drawing.Point(399, 266);
             this.btnCalculate.Name = "btnCalculate";
             this.btnCalculate.Size = new System.Drawing.Size(233, 39);
-            this.btnCalculate.TabIndex = 29;
+            this.btnCalculate.TabIndex = 7;
             this.btnCalculate.Text = "Izračun postavitve";
             this.btnCalculate.UseVisualStyleBackColor = true;
+            this.btnCalculate.Click += new System.EventHandler(this.btnCalculate_Click);
             // 
             // groupBoxPar
             // 
@@ -226,20 +234,85 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.Silver;
+            this.groupBox1.Controls.Add(this.listView1);
+            this.groupBox1.Controls.Add(this.txtResult);
+            this.groupBox1.Controls.Add(this.lblXY);
+            this.groupBox1.Controls.Add(this.lbCoordinates);
+            this.groupBox1.Controls.Add(this.lblResult);
             this.groupBox1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 311);
+            this.groupBox1.ForeColor = System.Drawing.Color.Black;
+            this.groupBox1.Location = new System.Drawing.Point(12, 320);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(620, 216);
+            this.groupBox1.Size = new System.Drawing.Size(620, 239);
             this.groupBox1.TabIndex = 31;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "REZULTATI";
+            // 
+            // lblResult
+            // 
+            this.lblResult.AutoSize = true;
+            this.lblResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblResult.Location = new System.Drawing.Point(11, 37);
+            this.lblResult.Name = "lblResult";
+            this.lblResult.Size = new System.Drawing.Size(237, 20);
+            this.lblResult.TabIndex = 29;
+            this.lblResult.Text = "Skupno število rondelic na traku:";
+            // 
+            // btnExit
+            // 
+            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnExit.ForeColor = System.Drawing.Color.Maroon;
+            this.btnExit.Location = new System.Drawing.Point(520, 574);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(112, 39);
+            this.btnExit.TabIndex = 32;
+            this.btnExit.Text = "Izhod";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // lbCoordinates
+            // 
+            this.lbCoordinates.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lbCoordinates.FormattingEnabled = true;
+            this.lbCoordinates.ItemHeight = 16;
+            this.lbCoordinates.Location = new System.Drawing.Point(15, 110);
+            this.lbCoordinates.Name = "lbCoordinates";
+            this.lbCoordinates.Size = new System.Drawing.Size(400, 116);
+            this.lbCoordinates.TabIndex = 30;
+            // 
+            // lblXY
+            // 
+            this.lblXY.AutoSize = true;
+            this.lblXY.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblXY.Location = new System.Drawing.Point(11, 87);
+            this.lblXY.Name = "lblXY";
+            this.lblXY.Size = new System.Drawing.Size(211, 20);
+            this.lblXY.TabIndex = 31;
+            this.lblXY.Text = "Koordinate rondelic na traku:";
+            // 
+            // txtResult
+            // 
+            this.txtResult.Location = new System.Drawing.Point(254, 35);
+            this.txtResult.Name = "txtResult";
+            this.txtResult.Size = new System.Drawing.Size(100, 26);
+            this.txtResult.TabIndex = 32;
+            // 
+            // listView1
+            // 
+            this.listView1.Location = new System.Drawing.Point(421, 110);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(183, 116);
+            this.listView1.TabIndex = 33;
+            this.listView1.UseCompatibleStateImageBehavior = false;
             // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
-            this.ClientSize = new System.Drawing.Size(651, 539);
+            this.ClientSize = new System.Drawing.Size(647, 627);
+            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBoxPar);
             this.Controls.Add(this.btnCalculate);
@@ -254,6 +327,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.numLength)).EndInit();
             this.groupBoxPar.ResumeLayout(false);
             this.groupBoxPar.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -275,6 +350,12 @@
         private System.Windows.Forms.Button btnCalculate;
         private System.Windows.Forms.GroupBox groupBoxPar;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label lblResult;
+        private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Label lblXY;
+        private System.Windows.Forms.ListBox lbCoordinates;
+        private System.Windows.Forms.TextBox txtResult;
+        private System.Windows.Forms.ListView listView1;
     }
 }
 
