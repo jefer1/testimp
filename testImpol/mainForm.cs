@@ -13,6 +13,7 @@ namespace testImpol
 {
     public partial class mainForm : Form
     {
+        private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         public mainForm()
         {
             InitializeComponent();
@@ -35,20 +36,23 @@ namespace testImpol
             int minMiddleDistance = Convert.ToInt32(numMiddleDistance.Value);
 
             if (length == 0 || width == 0 || radius == 0)
+            {
+                log.Info("Nepravilen vnos parametrov");
                 MessageBox.Show("Vhodni podatki dolžine, širine in radiusa rondelic morajo biti večji od 0!",
                         "Opozorilo",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Exclamation,
                         MessageBoxDefaultButton.Button1);
+            }
             else
             {
+                log.Info("Izvedba kalkulacije");
                 List<Rond> result = cal.Calculate(length, width, radius, minTopDistance, minLeftDistance, minMiddleDistance);
                 txtResult.Text = result.Count().ToString();
                 lbCoordinates.Items.Clear();
                 foreach (Rond _rond in result)
-                    lbCoordinates.Items.Add("Koordinata xy:\t"+_rond.posX+"," + _rond.posY+ "\tVrsta: " + _rond.row + "\tPozicija: " + _rond.position);
+                    lbCoordinates.Items.Add("Koordinata xy:\t" + _rond.posX + "," + _rond.posY + "\tVrsta: " + _rond.row + "\tPozicija: " + _rond.position);
             }
-
         }
     }
 }

@@ -43,12 +43,11 @@
             this.btnCalculate = new System.Windows.Forms.Button();
             this.groupBoxPar = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtResult = new System.Windows.Forms.TextBox();
+            this.lblXY = new System.Windows.Forms.Label();
+            this.lbCoordinates = new System.Windows.Forms.ListBox();
             this.lblResult = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
-            this.lbCoordinates = new System.Windows.Forms.ListBox();
-            this.lblXY = new System.Windows.Forms.Label();
-            this.txtResult = new System.Windows.Forms.TextBox();
-            this.listView1 = new System.Windows.Forms.ListView();
             ((System.ComponentModel.ISupportInitialize)(this.numMiddleDistance)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numLeftDistance)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numTopDistance)).BeginInit();
@@ -235,7 +234,6 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Silver;
-            this.groupBox1.Controls.Add(this.listView1);
             this.groupBox1.Controls.Add(this.txtResult);
             this.groupBox1.Controls.Add(this.lblXY);
             this.groupBox1.Controls.Add(this.lbCoordinates);
@@ -248,6 +246,33 @@
             this.groupBox1.TabIndex = 31;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "REZULTATI";
+            // 
+            // txtResult
+            // 
+            this.txtResult.Location = new System.Drawing.Point(254, 35);
+            this.txtResult.Name = "txtResult";
+            this.txtResult.Size = new System.Drawing.Size(100, 26);
+            this.txtResult.TabIndex = 32;
+            // 
+            // lblXY
+            // 
+            this.lblXY.AutoSize = true;
+            this.lblXY.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblXY.Location = new System.Drawing.Point(11, 87);
+            this.lblXY.Name = "lblXY";
+            this.lblXY.Size = new System.Drawing.Size(260, 20);
+            this.lblXY.TabIndex = 31;
+            this.lblXY.Text = "Koordinate centra rondelic na traku:";
+            // 
+            // lbCoordinates
+            // 
+            this.lbCoordinates.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lbCoordinates.FormattingEnabled = true;
+            this.lbCoordinates.ItemHeight = 16;
+            this.lbCoordinates.Location = new System.Drawing.Point(15, 110);
+            this.lbCoordinates.Name = "lbCoordinates";
+            this.lbCoordinates.Size = new System.Drawing.Size(589, 116);
+            this.lbCoordinates.TabIndex = 30;
             // 
             // lblResult
             // 
@@ -270,41 +295,6 @@
             this.btnExit.Text = "Izhod";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // lbCoordinates
-            // 
-            this.lbCoordinates.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lbCoordinates.FormattingEnabled = true;
-            this.lbCoordinates.ItemHeight = 16;
-            this.lbCoordinates.Location = new System.Drawing.Point(15, 110);
-            this.lbCoordinates.Name = "lbCoordinates";
-            this.lbCoordinates.Size = new System.Drawing.Size(400, 116);
-            this.lbCoordinates.TabIndex = 30;
-            // 
-            // lblXY
-            // 
-            this.lblXY.AutoSize = true;
-            this.lblXY.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblXY.Location = new System.Drawing.Point(11, 87);
-            this.lblXY.Name = "lblXY";
-            this.lblXY.Size = new System.Drawing.Size(211, 20);
-            this.lblXY.TabIndex = 31;
-            this.lblXY.Text = "Koordinate rondelic na traku:";
-            // 
-            // txtResult
-            // 
-            this.txtResult.Location = new System.Drawing.Point(254, 35);
-            this.txtResult.Name = "txtResult";
-            this.txtResult.Size = new System.Drawing.Size(100, 26);
-            this.txtResult.TabIndex = 32;
-            // 
-            // listView1
-            // 
-            this.listView1.Location = new System.Drawing.Point(421, 110);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(183, 116);
-            this.listView1.TabIndex = 33;
-            this.listView1.UseCompatibleStateImageBehavior = false;
             // 
             // mainForm
             // 
@@ -355,7 +345,6 @@
         private System.Windows.Forms.Label lblXY;
         private System.Windows.Forms.ListBox lbCoordinates;
         private System.Windows.Forms.TextBox txtResult;
-        private System.Windows.Forms.ListView listView1;
     }
 }
 

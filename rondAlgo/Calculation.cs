@@ -8,6 +8,8 @@ namespace rondAlgo
 {
     public class Calculation
     {
+        private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
         public List<Rond> Calculate(int length, int width, int radius, int minTopDistance, int minLeftDistance, int minMiddleDistance)
         {
             //višino in širino zmanjšamo za odmik od robov; zamika se upošteva pri zapisu koordinat
@@ -49,7 +51,7 @@ namespace rondAlgo
 
             freeSpaceX = radius * 2;
             freeSpaceY = radius * 2;
-            rowAndPosition = new int[]{ 0, 0 };
+            rowAndPosition = new int[] { 0, 0 };
 
             //razdalja mora biti deljiva z 2, da pomaknemo drugo vrsto na sredino
             int minMiddleDistanceX = minMiddleDistance;
@@ -70,6 +72,7 @@ namespace rondAlgo
                     allRondTriangular.Add(new Rond(freeSpaceX - radius + minLeftDistance, freeSpaceY - radius + minTopDistance, rowAndPosition[0], rowAndPosition[1])); //shranimo x koordinate
                     freeSpaceX = freeSpaceX + minMiddleDistanceX + radius * 2;
                 }
+                rowAndPosition[1] = 0;
                 freeSpaceY = freeSpaceY + MiddleDistanceY;
 
                 //korekcija zamika v x lihe vrste
@@ -82,10 +85,18 @@ namespace rondAlgo
             #endregion
 
             //vrne optimalno opcijo od izbranih dveh
+            log.Info("Rezultat po RondRectangular opciji: " + allRondRectangular.Count());
+            log.Info("Rezultat po RondTriangular opciji: " + allRondTriangular.Count());
             if (allRondRectangular.Count() >= allRondTriangular.Count())
+            { 
+                log.Info("RondRectangular vrnjena kot optimalna");
                 return allRondRectangular;
+            }
             else
+            {
+                log.Info("RondTriangular vrnjena kot optimalna");
                 return allRondTriangular;
+            }
         }
     }
 }
