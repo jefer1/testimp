@@ -58,7 +58,7 @@ namespace rondAlgo
             if (minMiddleDistanceX % 2 == 1)
                 minMiddleDistanceX += 1;
 
-            //izračun razdalje med vrstami v y smeri
+            //izračun razdalje med vrstami v y smeri, zaokrožimo na mm navzgor
             int MiddleDistanceY = Convert.ToInt32(Math.Ceiling(Math.Sqrt(3) * (radius + minMiddleDistanceX / 2)));
 
             //z while zanko zlagamo rondelice po vrstah od spodaj navzgor dokler je dovolj prostora, lihe vrste so zamaknjene na sredino spodnjih

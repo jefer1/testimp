@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "testImpol", "testImpol\test
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rondAlgo", "rondAlgo\rondAlgo.csproj", "{8F58ADFF-9C97-4495-83F7-60429FFBB0B0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "calculationTest", "calculationTest\calculationTest.csproj", "{1B2426E5-ECF6-473F-8E68-2756A3497147}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{8F58ADFF-9C97-4495-83F7-60429FFBB0B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8F58ADFF-9C97-4495-83F7-60429FFBB0B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8F58ADFF-9C97-4495-83F7-60429FFBB0B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B2426E5-ECF6-473F-8E68-2756A3497147}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B2426E5-ECF6-473F-8E68-2756A3497147}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B2426E5-ECF6-473F-8E68-2756A3497147}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B2426E5-ECF6-473F-8E68-2756A3497147}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

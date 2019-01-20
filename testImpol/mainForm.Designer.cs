@@ -43,6 +43,7 @@
             this.btnCalculate = new System.Windows.Forms.Button();
             this.groupBoxPar = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnExport = new System.Windows.Forms.Button();
             this.txtResult = new System.Windows.Forms.TextBox();
             this.lblXY = new System.Windows.Forms.Label();
             this.lbCoordinates = new System.Windows.Forms.ListBox();
@@ -84,7 +85,7 @@
             // numLeftDistance
             // 
             this.numLeftDistance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.numLeftDistance.Location = new System.Drawing.Point(477, 164);
+            this.numLeftDistance.Location = new System.Drawing.Point(477, 132);
             this.numLeftDistance.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -97,7 +98,7 @@
             // numTopDistance
             // 
             this.numTopDistance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.numTopDistance.Location = new System.Drawing.Point(477, 132);
+            this.numTopDistance.Location = new System.Drawing.Point(477, 164);
             this.numTopDistance.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -150,7 +151,7 @@
             // 
             this.lblLeftDistance.AutoSize = true;
             this.lblLeftDistance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblLeftDistance.Location = new System.Drawing.Point(24, 166);
+            this.lblLeftDistance.Location = new System.Drawing.Point(24, 134);
             this.lblLeftDistance.Name = "lblLeftDistance";
             this.lblLeftDistance.Size = new System.Drawing.Size(447, 20);
             this.lblLeftDistance.TabIndex = 21;
@@ -160,7 +161,7 @@
             // 
             this.lblTopDistance.AutoSize = true;
             this.lblTopDistance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblTopDistance.Location = new System.Drawing.Point(24, 134);
+            this.lblTopDistance.Location = new System.Drawing.Point(24, 166);
             this.lblTopDistance.Name = "lblTopDistance";
             this.lblTopDistance.Size = new System.Drawing.Size(369, 20);
             this.lblTopDistance.TabIndex = 20;
@@ -234,6 +235,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Silver;
+            this.groupBox1.Controls.Add(this.btnExport);
             this.groupBox1.Controls.Add(this.txtResult);
             this.groupBox1.Controls.Add(this.lblXY);
             this.groupBox1.Controls.Add(this.lbCoordinates);
@@ -242,10 +244,23 @@
             this.groupBox1.ForeColor = System.Drawing.Color.Black;
             this.groupBox1.Location = new System.Drawing.Point(12, 320);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(620, 239);
+            this.groupBox1.Size = new System.Drawing.Size(620, 272);
             this.groupBox1.TabIndex = 31;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "REZULTATI";
+            // 
+            // btnExport
+            // 
+            this.btnExport.Enabled = false;
+            this.btnExport.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnExport.ForeColor = System.Drawing.Color.Black;
+            this.btnExport.Location = new System.Drawing.Point(387, 232);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(217, 27);
+            this.btnExport.TabIndex = 33;
+            this.btnExport.Text = "Izvoz v datoteko";
+            this.btnExport.UseVisualStyleBackColor = true;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
             // txtResult
             // 
@@ -288,7 +303,7 @@
             // 
             this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnExit.ForeColor = System.Drawing.Color.Maroon;
-            this.btnExit.Location = new System.Drawing.Point(520, 574);
+            this.btnExit.Location = new System.Drawing.Point(520, 606);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(112, 39);
             this.btnExit.TabIndex = 32;
@@ -301,7 +316,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
-            this.ClientSize = new System.Drawing.Size(647, 627);
+            this.ClientSize = new System.Drawing.Size(647, 656);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBoxPar);
@@ -309,6 +324,7 @@
             this.Name = "mainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Izsek rondelic";
+            this.Load += new System.EventHandler(this.mainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numMiddleDistance)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numLeftDistance)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numTopDistance)).EndInit();
@@ -345,6 +361,7 @@
         private System.Windows.Forms.Label lblXY;
         private System.Windows.Forms.ListBox lbCoordinates;
         private System.Windows.Forms.TextBox txtResult;
+        private System.Windows.Forms.Button btnExport;
     }
 }
 
