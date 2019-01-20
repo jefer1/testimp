@@ -321,6 +321,8 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBoxPar);
             this.Controls.Add(this.btnCalculate);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "mainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Izsek rondelic";
